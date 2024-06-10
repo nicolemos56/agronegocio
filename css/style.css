@@ -5,34 +5,47 @@ body {
 }
 
 .navbar {
-    background-color: #333;
+    background-color: transparent;
     color: white;
     padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+    display: flex; /* Use flexbox para o menu */
+    justify-content: flex-end /* Alinhe itens para os lados */
+
+    
 }
+
 
 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: center;
+    display: flex; /* Use flexbox para os itens do menu */
+    margin: 20px;
 }
 
 .navbar li {
-    display: inline-block;
     margin: 0 15px;
 }
 
 .navbar a {
     text-decoration: none;
-    color: white;
+    color:green
+}
+.navbar a:hover {
+   background-color:rgb(4, 24, 4);
+   color:rgb(10, 223, 10);
+   border-radius: 27px;
+   
+   transition: 0.5s;
 }
 
 .hero {
-   background-image: url("../img/foto1.webp") ;
+    background-image: url("../img/foto1.webp");
     padding: 302px 0;
     text-align: center;
 }
@@ -48,10 +61,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    flex-direction: column; /* Empilha itens em telas menores */
 }
 
 .content {
-    width: 50%;
+    width: 100%; /* Conteúdo ocupa a largura total em telas menores */
 }
 
 .content h2 {
@@ -65,11 +79,14 @@ body {
 }
 
 .image {
-    width: 45%;
+    width: 100%; /* Imagem ocupa a largura total em telas menores */
+    margin-bottom: 20px; /* Espaçamento entre imagem e conteúdo */
 }
 
 .image img {
     width: 100%;
+    max-width: 800px; /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto; /* Centraliza a imagem */
 }
 
 .card {
@@ -79,10 +96,11 @@ body {
     padding: 30px;
     background-color: #fff;
     margin-bottom: 30px;
+    flex-direction: column; /* Empilha itens em telas menores */
 }
 
 .card-list {
-    width: 50%;
+    width: 100%; /* Lista de itens ocupa a largura total em telas menores */
 }
 
 .card-list ul {
@@ -91,7 +109,7 @@ body {
 }
 
 .card-image {
-    width: 45%;
+    width: 100%; /* Imagem ocupa a largura total em telas menores */
 }
 
 .card-image img {
@@ -101,19 +119,15 @@ body {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: green;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    margin-bottom: 20px; /* Espaçamento entre o botão e o conteúdo */
 }
-.btn-saiba-mais{
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    
+.button:hover {
+   background-color: rgb(4, 24, 4);;
+   transition: 0.5s;
 }
 
 .newsletter {
@@ -126,7 +140,9 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 300px;
+    width: 100%; /* Campo de email ocupa a largura total */
+    max-width: 300px; /* Ajuste a largura máxima conforme necessário */
+    margin-bottom: 10px; /* Espaçamento entre o campo e o botão */
 }
 
 .newsletter button {
@@ -151,12 +167,10 @@ body {
     background-image: url("/img/foto3.webp");
     background-size: cover;
     background-repeat: no-repeat;
-
-   
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    
+    flex-direction: column; /* Empilha elementos em telas menores */
 }
 
 .form-container {
@@ -164,6 +178,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Formulário ocupa a largura total em telas menores */
 }
 
 .form-container h1 {
@@ -192,18 +207,38 @@ body {
     border-radius: 5px;
 }
 
-button {
-    background-color: #6200ee; /* Roxo */
+nav>button {
+    background-color: green; /* Roxo */
     color: #fff;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 10%; /* Botão ocupa a largura total em telas menores */
+    margin-bottom: 20px; /* Espaçamento entre o botão e o conteúdo */
+}
+.container>.form-container>form>#btnEnviar{
+    background-color:  green;/* Roxo */
+    align-items: center;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão ocupa a largura total em telas menores */
+    margin-bottom: 20px; /* Espaçamento entre o botão e o conteúdo */
+}
+.container>.form-container>form>#btnEnviar:hover{
+    background-color: rgb(4, 24, 4);; /* Roxo mais escuro */
+    transition: 0.5s;
 }
 
+
 button:hover {
-    background-color: #5300c9; /* Roxo mais escuro */
+    background-color: rgb(4, 24, 4);; /* Roxo mais escuro */
+    transition: 0.5s;
 }
 
 .info-container {
@@ -211,7 +246,8 @@ button:hover {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 300px; /* Ajuste a largura conforme necessário */
+    width: 100%; /* Informações de contacto ocupam a largura total em telas menores */
+    margin-bottom: 20px; /* Espaçamento entre as seções */
 }
 
 .info-container h2 {
@@ -226,8 +262,6 @@ button:hover {
     margin-right: 5px;
 }
 
-
-
 footer {
     background-color: #f5f5f5; /* Cinza claro */
     padding: 30px 0;
@@ -241,12 +275,14 @@ footer {
     align-items: center;
     max-width: 1200px; /* Define a largura máxima da container */
     margin: 0 auto; /* Centraliza a container */
+    flex-direction: column; /* Empilha elementos em telas menores */
 }
 
 .footer-section {
     flex: 1;
     text-align: left;
     margin-bottom: 30px;
+    width: 100%; /* Seções do rodapé ocupam a largura total em telas menores */
 }
 
 .footer-section img {
@@ -292,4 +328,115 @@ footer {
     padding: 10px 0;
     text-align: center;
     font-size: 0.8rem;
+}
+
+/* Estilos para telas menores*/
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Esconde o menu */
+    }
+
+    /* Adicionar um botão de menu*/
+    .navbar-toggle {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .navbar-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Estilos para mostrar o menu ao clicar no botão */
+    .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar ul.mostrar {
+        display: block;
+        position: absolute;
+        top: 68%;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        text-align: center;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px;
+        color:rgb(10, 223, 10);
+    }
+    .container-footer {
+        flex-direction: column; /* Volta para a disposição em linha */
+        align-items: center;/* Posicionar no centro */
+        max-width: 126px;/* Para que a propriedade align-tems tenha efeito */
+    }
+
+}
+
+/* Estilos para telas maiores  */
+@media screen and (min-width: 769px) {
+    /* Estilos para telas maiores */
+    .container-item {
+        flex-direction: row; /* Volta para a disposição em linha */
+    }
+
+    .content {
+        width: 50%; /* Volta para a largura original */
+    }
+
+    .image {
+        width: 45%; /* Volta para a largura original */
+    }
+
+    .card {
+        flex-direction: row; /* Volta para a disposição em linha */
+    }
+
+    .card-list {
+        width: 50%; /* Volta para a largura original */
+    }
+
+    .container {
+        flex-direction: row; /* Volta para a disposição em linha */
+    }
+
+    .form-container {
+        width: 45%; /* Volta para a largura original */
+    }
+
+    .info-container {
+        width: 45%; /* Volta para a largura original */
+    }
+
+    .container-footer {
+        flex-direction: row; /* Volta para a disposição em linha */
+    }
+
+    .footer-section {
+        width: 20%; /* Volta para a largura original */
+    }
+    /*ocultar o buttao-nav em telas maiores*/
+    .navbar-toggle {
+        display: none;
+    }
 }
